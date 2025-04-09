@@ -1,0 +1,17 @@
+# Part II. Single-Node Patterns
+- Containers's goal is to establish boundaries around specific resources, such as CPU, memory, and network, which in its turn, provides a level of:
+    - Isolation: Running multiple applications on the same machine without interference, unless explicitly configured (like multiple containers sharing volumes)
+    - Encapsulation: All dependencies are included in the container, which means that the application can run in any environment without worrying about the underlying system
+    - Reusability: Same container can be used in different applications
+    - Testability: Can be tested independently
+    - Portability: Can be moved between different environments e.g. development, testing, and production
+    - Scalability: Can be easily scaled up or down by adding or removing containers
+    - Agility: Can be deployed and updated quickly
+    - Security: Can be isolated from the host system and other containers
+    - Reliabile rollout: Can be rolled back to a previous version
+- Containers are the foundational building block for the patterns in this book.
+- Containers colocated on a single machine make up the atomic elements of distributed system patterns.
+- In this part, it is assumed that all of the containers in the pattern can:
+    - be reliably colocated on a single machine.
+    - share memory, volumes, and network resources.
+- This tight grouping of containers is called a "pod" in Kubernetes.
