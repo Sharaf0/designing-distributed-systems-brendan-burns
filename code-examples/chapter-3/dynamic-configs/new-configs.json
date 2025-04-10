@@ -1,4 +1,4 @@
 {
-  "key": "new-value",
-  "feature_flag": true
+    "k1": "new value",
+    "k2": "another new value"
 }
