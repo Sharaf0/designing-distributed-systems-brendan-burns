@@ -11,6 +11,8 @@ Many legacy applications were built without HTTPS support, which is now a securi
 
 ## Solution Overview
 
+![HTTP to HTTPS Sidecar Pattern](https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781098156343/files/assets/dds2_0302.png)
+
 - The **legacy application** serves HTTP traffic on `localhost:8080` and is not exposed externally.
 - The **Nginx sidecar** terminates HTTPS traffic on port `443` and proxies requests to the legacy application over the local network.
 - This ensures secure communication externally while keeping the internal setup simple.
