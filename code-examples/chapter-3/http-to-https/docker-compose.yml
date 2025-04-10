@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  legacy-app:
+    build:
+      context: ./legacy-app
+      dockerfile: Dockerfile.legacy
+    networks:
+      - sidecar-network
+    # Removed ports mapping to prevent external access
+
+  nginx-sidecar:
+    build:
+      context: ./nginx-sidecar
+      dockerfile: Dockerfile.nginx
+    networks:
+      - sidecar-network
+    ports:
+      - "443:443"
+
+networks:
+  sidecar-network:
+    driver: bridge

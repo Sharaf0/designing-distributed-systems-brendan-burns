@@ -1,0 +1,15 @@
+# Dockerfile for the Nginx sidecar container
+FROM nginx:stable-alpine
+
+# Copy the custom Nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copy SSL certificates
+COPY server.crt /etc/nginx/ssl/server.crt
+COPY server.key /etc/nginx/ssl/server.key
+
+# Expose the HTTPS port
+EXPOSE 443
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
